@@ -1,0 +1,49 @@
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+
+int sortRowWise(int m[M][N])
+{
+
+  for (int i = 0; i < M; i++)
+
+    sort(m[i], m[i] + N);
+
+  for (int i = 0; i < M; i++) 
+
+  {
+
+    for (int j = 0; j < N; j++)
+
+      cout << (m[i][j]) << " ";
+
+    cout << endl;
+
+  }
+}
+int main(){
+    int m,n;
+    int s=100;
+    cout<<"Enter no of rows";
+    cin>>m;
+    cout<<"Enter no of columns";
+    cin>>n;
+    int arr[m][n];
+    for (int i = 0; i < m; i++)
+        for (int j =0;j<n;j++)
+            arr[i][j]= rand()%s;
+    for (int i = 0; i < m; i++){
+        for (int j =0;j<n;j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    sortRowWise(arr);
+    for (int i = 0; i < m; i++){
+        for (int j =0;j<n;j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
